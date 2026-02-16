@@ -1,0 +1,6 @@
+#!/home/su/projects/data-engineering-zoomcamp/04-analytics-engineering/04_work/bin/python
+import sys
+from dbt.cli.main import cli
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(cli())
