@@ -136,7 +136,7 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                values: [0, 1, 2, 3, 4, 5, 6]
+                values: [0, 1, 2, 3, 4,5,6]
       - name: payment_type_description
         description: Human-readable payment method description
         data_type: varchar
