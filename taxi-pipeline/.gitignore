@@ -13,7 +13,7 @@ _local
 *.wal 
 
 dlt_wrk/
-
+*.bkp
 
 # Git repository
 .git/
