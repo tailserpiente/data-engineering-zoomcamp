@@ -1,0 +1,24 @@
+init:
+  version: 0.1.0
+  description: Shared rules, secrets handling, and workspace MCP for dlt
+  tags:
+  - dlt
+  - init
+  - rules
+  - secrets
+  - mcp
+  installed_at: '2026-03-06T17:56:37.777600+00:00'
+  agent: cursor
+  files:
+    .cursor/skills/setup-secrets/SKILL.md:
+      sha3_256: ba00c7451c4686cd37d1bb4242487751fe5e2402c3f9f6ae5888ba42f922a166
+    .cursor/skills/setup-secrets/cli-reference.md:
+      sha3_256: afb4bebdc1f3a84cd692303e069ed729ea32820d8efd5f8d3cccfe702c18e979
+    .cursor/skills/toolkit-dispatch/SKILL.md:
+      sha3_256: a90e45a30a169041b8c05efaeff3f37cbd401358a54ec8f5e641d92e132f5979
+    .cursorignore:
+      sha3_256: 1aa4dc9286dd219dcb55399f388c5ee1f940ab5e399a42b644d488cba57a9ec0
+    .cursor/rules/init-dlthub-workspace.mdc:
+      sha3_256: 53be0d060d15404563778c6bd4e73dc99daeee901831de3cb59dddc52582e43e
+  mcp_servers:
+  - dlt-workspace-mcp
