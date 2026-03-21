@@ -11,9 +11,16 @@ from kafka import KafkaProducer
 from models import Ride, ride_from_row
 
 # Download NYC yellow taxi trip data (first 1000 rows)
-url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-11.parquet"
-columns = ['PULocationID', 'DOLocationID', 'trip_distance', 'total_amount', 'tpep_pickup_datetime']
-df = pd.read_parquet(url, columns=columns).head(1000)
+url = 'https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-10.parquet'
+columns = ['lpep_pickup_datetime',
+'lpep_dropoff_datetime',
+'PULocationID',
+'DOLocationID',
+'passenger_count',
+'trip_distance',
+'tip_amount',
+'total_amount']
+df = pd.read_parquet(url, columns=columns).head(100)
 
 def ride_serializer(ride):
     ride_dict = dataclasses.asdict(ride)
@@ -28,13 +35,13 @@ producer = KafkaProducer(
 )
 t0 = time.time()
 
-topic_name = 'rides'
+topic_name = 'green-trips'
 
 for _, row in df.iterrows():
     ride = ride_from_row(row)
     producer.send(topic_name, value=ride)
     print(f"Sent: {ride}")
-    time.sleep(0.01)
+    time.sleep(0.1)
 
 producer.flush()
 

@@ -1,0 +1,12 @@
+docker compose down jobmanager taskmanager
+docker compose up -d jobmanager taskmanager
+
+
+
+docker compose down 
+docker compose build
+docker compose up -d 
+
+docker exec -it workshop-jobmanager-1 flink run -py /opt/src/job/aggregation_job_demo.py
+
+docker exec -it workshop-jobmanager-1 flink run -py /opt/src/job/simple_aggregation.py
